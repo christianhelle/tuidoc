@@ -114,7 +114,13 @@ pub fn open(bytes: Vec<u8>) -> Result<Docx, DocxError> {
                 kind,
                 StoryKind::Footnotes | StoryKind::Endnotes | StoryKind::Comments
             );
-            if !(notes && story.notes.is_empty()) {
+            // Word writes a header and footer for every kind of page, most of them empty.
+            let margin = matches!(kind, StoryKind::Header | StoryKind::Footer);
+            let blank = story
+                .paths()
+                .iter()
+                .all(|path| story.paragraph(*path).is_none_or(|p| p.is_empty()));
+            if !(notes && story.notes.is_empty()) && !(margin && blank) {
                 stories.push(story);
             }
         }

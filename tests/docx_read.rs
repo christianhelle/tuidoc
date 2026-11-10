@@ -287,3 +287,26 @@ fn list_paragraphs_keep_their_numbering_properties() {
     let raw = paragraph(&story, 0).props.get("numPr").unwrap().to_string();
     assert!(raw.contains("w:numId w:val=\"2\""));
 }
+
+#[test]
+fn a_header_with_nothing_in_it_gets_no_tab() {
+    let rels = common::rels(&[
+        ("rId1", "header", "header1.xml"),
+        ("rId2", "header", "header2.xml"),
+    ]);
+    let (empty, full) = (
+        common::part("hdr", "<w:p/>"),
+        common::part("hdr", &p("Head")),
+    );
+    let bytes = docx_with(
+        &p("Body"),
+        &[
+            ("word/_rels/document.xml.rels", &rels),
+            ("word/header1.xml", &empty),
+            ("word/header2.xml", &full),
+        ],
+    );
+    let opened = docx::open(bytes).unwrap();
+    assert_eq!(opened.stories.len(), 2);
+    assert_eq!(paragraph(&opened.stories[1], 0).text(), "Head");
+}
