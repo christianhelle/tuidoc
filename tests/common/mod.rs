@@ -199,3 +199,108 @@ pub fn read_part_of(bytes: &[u8], name: &str) -> Option<String> {
     file.read_to_string(&mut content).unwrap();
     Some(content)
 }
+
+use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
+use ratatui::Terminal;
+use ratatui::backend::TestBackend;
+use tuidoc::app::App;
+use tuidoc::document::Document;
+
+/// An app showing a document with the given body content.
+pub fn app(body: &str) -> App {
+    app_of(docx(body))
+}
+
+/// An app showing the document in the given package.
+pub fn app_of(bytes: Vec<u8>) -> App {
+    let mut app = App::new(Document::from_bytes(bytes, None).unwrap());
+    app.fit(60, 16);
+    app
+}
+
+/// An app showing a document with styles, lists, notes and the rest.
+pub fn rich_app(body: &str) -> App {
+    app_of(rich(body))
+}
+
+/// Types keys. `⎋` is Esc, `⏎` Enter, `⇥` Tab, `⇤` Shift-Tab, `⌫` Backspace, `⌦` Delete,
+/// `←→↑↓` the arrows, and `⌃` holds Ctrl for the key after it.
+pub fn type_keys(app: &mut App, keys: &str) {
+    let mut ctrl = false;
+    for c in keys.chars() {
+        if c == '⌃' {
+            ctrl = true;
+            continue;
+        }
+        let code = match c {
+            '⎋' => KeyCode::Esc,
+            '⏎' => KeyCode::Enter,
+            '⇥' => KeyCode::Tab,
+            '⇤' => KeyCode::BackTab,
+            '⌫' => KeyCode::Backspace,
+            '⌦' => KeyCode::Delete,
+            '←' => KeyCode::Left,
+            '→' => KeyCode::Right,
+            '↑' => KeyCode::Up,
+            '↓' => KeyCode::Down,
+            c => KeyCode::Char(c),
+        };
+        let modifiers = match ctrl {
+            true => KeyModifiers::CONTROL,
+            false => KeyModifiers::NONE,
+        };
+        ctrl = false;
+        app.handle_key(KeyEvent::new(code, modifiers));
+    }
+}
+
+/// The app with keys typed into it.
+pub fn typed(mut app: App, keys: &str) -> App {
+    type_keys(&mut app, keys);
+    app
+}
+
+/// The body's paragraphs as text.
+pub fn text(app: &App) -> Vec<String> {
+    app.document().text()
+}
+
+/// The screen as text, at a size.
+pub fn screen(app: &mut App, width: u16, height: u16) -> String {
+    let mut terminal = Terminal::new(TestBackend::new(width, height)).unwrap();
+    let area = ratatui::layout::Rect::new(0, 0, width, height);
+    tuidoc::ui::fit(app, area);
+    terminal.draw(|frame| tuidoc::ui::draw(frame, app)).unwrap();
+    let buffer = terminal.backend().buffer();
+    let mut out = String::new();
+    for y in 0..height {
+        let mut line = String::new();
+        let mut skip = 0;
+        for x in 0..width {
+            if skip > 0 {
+                skip -= 1;
+                continue;
+            }
+            let symbol = buffer[(x, y)].symbol();
+            line.push_str(symbol);
+            skip = unicode_width::UnicodeWidthStr::width(symbol).saturating_sub(1);
+        }
+        out.push_str(line.trim_end());
+        out.push('\n');
+    }
+    out
+}
+
+/// The screen at the size of a small terminal.
+pub fn shot(app: &mut App) -> String {
+    screen(app, 80, 20)
+}
+
+/// The foreground and background colours of a cell of the screen.
+pub fn colours_at(app: &mut App, x: u16, y: u16) -> (ratatui::style::Color, ratatui::style::Color) {
+    let mut terminal = Terminal::new(TestBackend::new(80, 20)).unwrap();
+    tuidoc::ui::fit(app, ratatui::layout::Rect::new(0, 0, 80, 20));
+    terminal.draw(|frame| tuidoc::ui::draw(frame, app)).unwrap();
+    let cell = &terminal.backend().buffer()[(x, y)];
+    (cell.fg, cell.bg)
+}
