@@ -120,7 +120,8 @@ pub fn open(bytes: Vec<u8>) -> Result<Docx, DocxError> {
                 .paths()
                 .iter()
                 .all(|path| story.paragraph(*path).is_none_or(|p| p.is_empty()));
-            if !(notes && story.notes.is_empty()) && !(margin && blank) {
+            let nothing_to_show = (notes && story.notes.is_empty()) || (margin && blank);
+            if !nothing_to_show {
                 stories.push(story);
             }
         }
