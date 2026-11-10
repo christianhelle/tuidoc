@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-11
+
 ### Added
 
 - Viewing documents: `tdoc <file.docx>` shows a Word document wrapped to the
@@ -48,4 +50,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   with the wheel.
 - Help: `?` lists the keys of the mode you are in.
 
-[Unreleased]: https://github.com/christianhelle/tuidoc/commits/main
+[Unreleased]: https://github.com/christianhelle/tuidoc/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/christianhelle/tuidoc/releases/tag/v0.1.0
