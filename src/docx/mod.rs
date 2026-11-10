@@ -1,7 +1,10 @@
 //! Reading and writing the .docx package a document lives in.
 
+pub mod blank;
 pub mod package;
 pub mod reader;
+pub mod saving;
+pub mod writer;
 pub mod xml;
 
 use std::fmt;

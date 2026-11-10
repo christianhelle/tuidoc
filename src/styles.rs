@@ -197,6 +197,16 @@ impl Styles {
         })
     }
 
+    /// The list a paragraph belongs to and how deep in it, set on the paragraph or by its style.
+    pub fn list_item(&self, paragraph: &Props) -> Option<(String, usize)> {
+        let raw = self.paragraph_prop(paragraph, "numPr")?;
+        let list = xml::val_within(&raw, "w:numId").filter(|id| id != "0")?;
+        let depth = xml::val_within(&raw, "w:ilvl")
+            .and_then(|depth| depth.parse().ok())
+            .unwrap_or(0);
+        Some((list, depth))
+    }
+
     /// Whether a paragraph is the document's title.
     pub fn is_title(&self, paragraph: &Props) -> bool {
         self.paragraph_chain(paragraph)

@@ -1,5 +1,21 @@
 //! View and edit Word documents from the terminal.
+pub mod app;
+pub mod changes;
+pub mod clipboard;
+pub mod command;
+pub mod document;
 pub mod docx;
+pub mod file_dialog;
+pub mod formatting;
+pub mod help;
+mod keys;
+pub mod layout;
+pub mod line_edit;
 pub mod model;
+pub mod motion;
 pub mod numbering;
+mod numbers;
+pub mod picker;
+pub mod status;
 pub mod styles;
+pub mod ui;

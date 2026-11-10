@@ -66,7 +66,7 @@ pub struct Story {
 }
 
 /// Where a paragraph is in a story: among the top-level blocks, or in a table's cell.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum BlockPath {
     Top(usize),
     Cell {
@@ -75,6 +75,28 @@ pub enum BlockPath {
         cell: usize,
         block: usize,
     },
+}
+
+impl PartialOrd for BlockPath {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+/// Paths compare in reading order.
+impl Ord for BlockPath {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        let key = |path: &Self| match *path {
+            Self::Top(index) => (index, 0, 0, 0),
+            Self::Cell {
+                table,
+                row,
+                cell,
+                block,
+            } => (table, row, cell, block),
+        };
+        key(self).cmp(&key(other))
+    }
 }
 
 impl BlockPath {
