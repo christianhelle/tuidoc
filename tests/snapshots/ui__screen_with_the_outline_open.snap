@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"gOj\"))"
+---
+┏ Outline ━━━━━━━━━━━━━━━━━┓┌ [No Name] — Body ────────────────────────────────┐
+┃  Quarterly report        ┃│1                  Quarterly report               │
+┃> Summary                 ┃│                                                  │
+┃                          ┃│  1 Summary                                       │
+┃                          ┃│                                                  │
+┃                          ┃│  2 The quick brown fox jumps over the lazy dog   │
+┃                          ┃│  3 and keeps running until the line wraps at the │
+┃                          ┃│  4 edge of the pane.[1]                          │
+┃                          ┃│                                                  │
+┃                          ┃│  5 • First bullet                                │
+┃                          ┃│  6   ◦ Nested bullet                             │
+┃                          ┃│  7 1. Numbered                                   │
+┃                          ┃│                                                  │
+┃                          ┃│    ┌────────────────┬────────────────┐           │
+┃                          ┃│  8 │ Region         │ Sales          │           │
+┃                          ┃│    ├────────────────┼────────────────┤           │
+┃                          ┃│  9 │ North          │ 1,200          │           │
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛└──────────────────────────────────────────────────┘
+ Body  Header  Footnotes  Comments
+ NORMAL  Enter go · j k move · Esc back · gO close · ? help               ¶ 1/10

@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"gtgt\"))"
+---
+┏ [No Name] — Footnotes ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1   [1] A note at the foot.                                                   ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL  ? help · i edit · v select · / find · gO outline · Ctrl-S save · q quit

@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: shot(&mut report())
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1                                Quarterly report                             ┃
+┃                                                                              ┃
+┃  1 Summary                                                                   ┃
+┃                                                                              ┃
+┃  2 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃  3 line wraps at the edge of the pane.[1]                                    ┃
+┃                                                                              ┃
+┃  4 • First bullet                                                            ┃
+┃  5   ◦ Nested bullet                                                         ┃
+┃  6 1. Numbered                                                               ┃
+┃                                                                              ┃
+┃    ┌────────────────┬────────────────┐                                       ┃
+┃  7 │ Region         │ Sales          │                                       ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  8 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL  ? help · i edit · v select · / find · gO outline · Ctrl-S save · q quit

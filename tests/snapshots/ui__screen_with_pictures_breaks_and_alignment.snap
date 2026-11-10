@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: shot(&mut app(&body))
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1   Before[image: A chart of sales]after                                      ┃
+┃  1 next line   tabbed                                                        ┃
+┃                                                                              ┃
+┃  2 ──── page break ────                                                      ┃
+┃                                                                              ┃
+┃  3                                                               To the right┃
+┃                                                                              ┃
+┃  4       Indented an inch                                                    ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ NORMAL  ? help · i edit · v select · / find · gO outline · Ctrl-S save · q quit

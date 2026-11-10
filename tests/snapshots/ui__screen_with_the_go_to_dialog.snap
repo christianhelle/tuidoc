@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"⌃g12\"))"
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1                                Quarterly report                             ┃
+┃                                                                              ┃
+┃  1 Summary                                                                   ┃
+┃                                                                              ┃
+┃  2 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃  3 line wraps at the edge of the pane.[1]                                    ┃
+┃                                                                              ┃
+┃  4 • First b┌ Go to ───────────────────────────────────────────┐             ┃
+┃  5   ◦ Neste│Paragraph: 12                                     │             ┃
+┃  6 1. Number│Enter go   Esc cancel                             │             ┃
+┃             └──────────────────────────────────────────────────┘             ┃
+┃    ┌────────────────┬────────────────┐                                       ┃
+┃  7 │ Region         │ Sales          │                                       ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  8 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL                                                                   ¶ 1/10

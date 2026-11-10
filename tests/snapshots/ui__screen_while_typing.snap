@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"jjA and more\"))"
+---
+┏ [No Name]* — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  3                              Quarterly report                             ┃
+┃                                                                              ┃
+┃  2 Summary                                                                   ┃
+┃                                                                              ┃
+┃  1 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃3   line wraps at the edge of the pane.[1] and more                           ┃
+┃                                                                              ┃
+┃  1 • First bullet                                                            ┃
+┃  2   ◦ Nested bullet                                                         ┃
+┃  3 1. Numbered                                                               ┃
+┃                                                                              ┃
+┃    ┌────────────────┬────────────────┐                                       ┃
+┃  4 │ Region         │ Sales          │                                       ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  5 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ INSERT  Esc done · Enter new paragraph · Ctrl-S save · F1 help           ¶ 3/10

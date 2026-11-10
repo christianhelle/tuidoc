@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: shot(&mut app(&body))
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃    ┌─────────────────────────────────────┐                                   ┃
+┃1   │ Spanning both columns               │                                   ┃
+┃    ├────────────┬────────────────────────┤                                   ┃
+┃  1 │ Narrow     │ First paragraph        │                                   ┃
+┃  2 │ cell with  │ Second paragraph       │                                   ┃
+┃  3 │ text that  │                        │                                   ┃
+┃  4 │ wraps      │                        │                                   ┃
+┃    └────────────┴────────────────────────┘                                   ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┃                                                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ NORMAL  ? help · i edit · v select · / find · gO outline · Ctrl-S save · q quit

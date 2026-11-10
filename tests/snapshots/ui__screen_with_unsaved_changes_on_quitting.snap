@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"xq\"))"
+---
+┏ [No Name]* — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1                                uarterly report                              ┃
+┃                                                                              ┃
+┃  1 Summary                                                                   ┃
+┃                                                                              ┃
+┃  2 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃  3 line wraps at the edge of the pane.[1]                                    ┃
+┃                                                                              ┃
+┃  4 • Fir┌ Unsaved changes ─────────────────────────────────────────┐         ┃
+┃  5   ◦ N│[No Name] has unsaved changes.                            │         ┃
+┃  6 1. Nu│s save and quit   d discard and quit   Esc stay           │         ┃
+┃         └──────────────────────────────────────────────────────────┘         ┃
+┃    ┌────────────────┬────────────────┐                                       ┃
+┃  7 │ Region         │ Sales          │                                       ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  8 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL                                                                   ¶ 1/10

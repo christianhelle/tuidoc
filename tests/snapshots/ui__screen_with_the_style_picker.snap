@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"ghhead\"))"
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃1                                Quarterly report                             ┃
+┃                                                                              ┃
+┃  1 Summary                                                                   ┃
+┃                                                                              ┃
+┃  2 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃  3 line wraps at the edge of the pane.[1]                                    ┃
+┃             ┌ Paragraph style ─────────────────────────────────┐             ┃
+┃  4 • First b│Style: head                                       │             ┃
+┃  5   ◦ Neste│> heading 1                                       │             ┃
+┃  6 1. Number│  heading 2                                       │             ┃
+┃             │  heading 3                                       │             ┃
+┃    ┌────────│Enter apply   ↑ ↓ choose   Esc cancel             │             ┃
+┃  7 │ Region └──────────────────────────────────────────────────┘             ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  8 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL                                                                   ¶ 1/10

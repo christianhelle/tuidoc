@@ -1,0 +1,24 @@
+---
+source: tests/ui.rs
+expression: "shot(&mut typed(report(), \"jj$K\"))"
+---
+┏ [No Name] — Body ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  3                              Quarterly report                             ┃
+┃                                                                              ┃
+┃  2 Summary                                                                   ┃
+┃                                                                              ┃
+┃  1 The quick brown fox jumps over the lazy dog and keeps running until the   ┃
+┃3   line wraps at the edge of the pane.[1]                                    ┃
+┃                                                                              ┃
+┃  1 • Fir┌ Look up ─────────────────────────────────────────────────┐         ┃
+┃  2   ◦ N│[1] A note at the foot.                                   │         ┃
+┃  3 1. Nu│Press any key to close                                    │         ┃
+┃         └──────────────────────────────────────────────────────────┘         ┃
+┃    ┌────────────────┬────────────────┐                                       ┃
+┃  4 │ Region         │ Sales          │                                       ┃
+┃    ├────────────────┼────────────────┤                                       ┃
+┃  5 │ North          │ 1,200          │                                       ┃
+┃    └────────────────┴────────────────┘                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ Body  Header  Footnotes  Comments
+ NORMAL                                                                   ¶ 3/10
