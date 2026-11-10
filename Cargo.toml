@@ -1,0 +1,29 @@
+[package]
+name = "tuidoc"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+description = "A terminal viewer and editor for Word documents, with vim-style keys"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/christianhelle/tuidoc"
+repository = "https://github.com/christianhelle/tuidoc"
+keywords = ["word", "docx", "document", "editor", "tui"]
+categories = ["command-line-utilities", "text-editors"]
+exclude = [".github/", ".gitattributes", "docs/", "images/"]
+
+[[bin]]
+name = "tdoc"
+path = "src/main.rs"
+
+[dependencies]
+crossterm = "0.29.0"
+quick-xml = "0.42.0"
+ratatui = "0.30.2"
+tempfile = "3.27.0"
+unicode-segmentation = "1"
+unicode-width = "0.2.3"
+zip = { version = "9.2.1", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+insta = "1.49.0"
